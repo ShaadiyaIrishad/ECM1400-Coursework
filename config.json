@@ -1,0 +1,15 @@
+{
+	"api_key": "d4578ad7bb3745a1a123cc0027861fe8",
+	"covid_updates": [],
+	"covid_updates_scheduled": [],
+	"news_updates": [],
+	"news_updates_scheduled": [],
+	"updates": [],
+	"updates_scheduled": [],
+	"location": "Exeter",
+	"nation_location": "England",
+	"local_7day_infections": 705,
+	"national_7day_infections": 267717,
+	"hospital_cases": 6405,
+	"deaths_total": 147294
+}
