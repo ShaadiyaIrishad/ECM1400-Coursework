@@ -1,8 +1,19 @@
+"""
+The main file of the project. 
+Handles the scheduling loop and the Flask application.
+"""
+
+# importing flask modules to run flask
 from flask import Flask, render_template
+
+# importing covid_data_handler module
 from covid_data_handler import parse_csv_data, process_covid_csv_data, covid_API_request, process_live_data, create_total_list
+
+# importing covid_news_handling modules
 from covid_news_handling import news_API_request
 
 
+# calling Flask and assigning it to a variable
 app = Flask(__name__, template_folder='./')
 
 
@@ -15,6 +26,11 @@ articles = news_API_request()
 
 @app.route('/')
 def hello():
+    """
+    Opening the home page, fetches the area and area type from the configuration file 
+    to be used to insert data into the render template
+    """
+
     result = parse_csv_data("nation_2021-10-28.csv")
     last7days_cases, current_hospital_cases, total_deaths = process_covid_csv_data(
         result)
@@ -36,6 +52,8 @@ def hello():
 
 
 if __name__ == '__main__':
+
+    # run program and fetch initial data
 
     app.run()
     result = parse_csv_data("nation_2021-10-28.csv")
