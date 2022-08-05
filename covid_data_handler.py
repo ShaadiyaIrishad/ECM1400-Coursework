@@ -1,4 +1,4 @@
-"""Module for handling COVID data updates"""
+""" Module for handling COVID data updates. """
 
 # importing modules for logging
 import logging
@@ -109,7 +109,7 @@ def create_total_list(live_data, csv_data):
 
 
 def schedule_covid_updates(update_interval, update_name):
-     """
+    """
     Create scheduler to update covid data based on user specified time,
     in order to update the covid data that is shown to the user.
     """
