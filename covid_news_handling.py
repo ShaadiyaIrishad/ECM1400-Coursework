@@ -1,11 +1,19 @@
+"""Module for handling COVID news updates."""
 
+# importing modules for logging
+import logging
+
+# importing modules
 import requests
 import json
-import logging
 import flask
 
 
 def news_API_request(covid_terms='Covid, COVID-19, coronavirus') -> dict:
+     """
+    Fetches API key from configuration file.
+    Searches for search terms for news articles
+    """
 
     key_terms = 'Covid, COVID-19, coronavirus'
     f = open('config.json')
