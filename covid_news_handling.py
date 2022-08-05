@@ -13,7 +13,8 @@ def news_API_request(covid_terms='Covid, COVID-19, coronavirus') -> dict:
     api_key = config_dict["api_key"]
 
     try:
-        main_url = 'https://newsapi.org/v2/everything?q=' + key_terms + "&apiKey=" + api_key
+        main_url = 'https://newsapi.org/v2/everything?q=' + \
+            key_terms + "&apiKey=" + api_key
         news = requests.get(main_url).json()
         articles = news['articles']
     # For the instance someone has incorrect URL parameters the config file incorrectly
