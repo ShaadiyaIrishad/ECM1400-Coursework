@@ -1,14 +1,17 @@
-import logging
+# importing API and modules to access it
 import json
 import sched
 import time
 from uk_covid19 import Cov19API
 
-
+# Setting up logging
 logging.basicConfig(level=logging.DEBUG)
 
 
 def parse_csv_data(csv_filename):
+    """
+    This function opens the csv file, extracts the data from the file and returns it
+    """
 
     logging.info("covid_data_handler :: parse_csv_data :: Begin")
     with open(csv_filename, 'r') as csvfile:
@@ -19,6 +22,11 @@ def parse_csv_data(csv_filename):
 
 
 def process_covid_csv_data(covid_csv_data):
+    """
+    This function is used to iterate through and extract specfic data in the covid_csv_data file
+    As well as also being used in the covid_API_request for formating purposes
+    """
+
     last7days_cases = 0
     current_hospital_cases = 0
     total_deaths = 0
@@ -42,6 +50,12 @@ def process_covid_csv_data(covid_csv_data):
 
 
 def covid_API_request(location="Exeter", location_type="ltla"):
+    """
+    This function uses the uk_covid19 module and the API key from it
+        to extract live data to be displayed on the flask interface
+    It also formats what order the data must be fetched in to be stored in a dictionary
+    """
+
     england_only = [
         'areaType=' + location_type,
         'areaName=' + location
@@ -90,11 +104,21 @@ def create_total_list(live_data, csv_data):
 
 
 def schedule_covid_updates(update_interval, update_name):
+     """
+    Create scheduler to update covid data based on user specified time,
+    in order to update the covid data that is shown to the user.
+    """
 
     nation_location, location = locations()
 
 
 def locations():
+    
+    """
+    This function extracts data from the configuration file to set up
+        the national_location and location variable
+    This will help set up the locations for data to be pulled from the API
+    """
 
     f = open('config.json',)
     config_dict = json.load(f)
