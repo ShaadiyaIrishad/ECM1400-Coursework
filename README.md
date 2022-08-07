@@ -34,7 +34,7 @@ $pip install -U pytest
 An API key is needed to obtain the news articles : https://newsapi.org/register
 
 
-# Running the Program
+## Running the Program
 To execute the program, open a programming environment that runs python 3.8.8 or newer. 
 Once all modules have been installed, you can run the dashboard from `main.py`.
 
@@ -43,16 +43,16 @@ To navigate the dashboard via a web browser, use `http://127.0.0.1:5000/`.
 To quit the program, press CTRL + C in the terminal. 
 
 
-# Removing News Articles
+## Removing News Articles
 News articles can be removed by pressing the x on them, allowing a new article to take its place.
 
 
-# Configuration file
+## Configuration file
 Figures must be filled out in the configuration file for customization, before executing the program. 
 Values in the config file can be changed to create a more personalized dashboard. 
 
 
-# Testing
+## Testing
 Tests are included to ensure project functionality. 
 
 For testing: 
@@ -61,11 +61,11 @@ pip install pytest
 ```
 
 
-## Developer Details 
+### Developer Details 
 Shaadiya Irishad
 ECM1400 - University of Exeter
 Github: https://github.com/ShaadiyaIrishad
 
 
-## License
+### License
 [MIT](https://choosealicense.com/licenses/mit/)
