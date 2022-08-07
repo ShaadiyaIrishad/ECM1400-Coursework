@@ -1,4 +1,4 @@
-""" Module for handling COVID data updates. """
+""" Module for handling COVID data updates """
 
 # importing modules for logging
 import logging
@@ -118,7 +118,6 @@ def schedule_covid_updates(update_interval, update_name):
 
 
 def locations():
-    
     """
     This function extracts data from the configuration file 
     to set up the national_location and location variable.
